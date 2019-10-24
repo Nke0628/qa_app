@@ -1,0 +1,28 @@
+/* ナビゲーションバー */
+.navbar{
+	background: #66ADD9;
+}
+
+.navbar-nav>li>a{
+	color: white;
+}
+
+.navbar-brand{
+	color: white;
+}
+
+.navbar-brand i{
+	margin-right: 5px;
+}
+
+.post-btn{
+	border: 1px solid #eee;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;	
+	margin-right: 10px;
+}
+
+.post-btn i{
+	margin-right: 5px;
+}

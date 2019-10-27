@@ -12,7 +12,7 @@
                     </ul>
                 </div>
             @endif
-            <form method="post" action="{{ url('/createconfirm' )}}" enctype="multipart/form-data">
+            <form method="post" action="{{ url('/questions/store' )}}" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group mb-5">
                     <label class="h4">質問タイトル</label>

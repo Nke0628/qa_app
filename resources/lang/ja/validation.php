@@ -154,6 +154,14 @@ return [
       |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'title' => 'タイトル',
+        'content' => '質問内容',
+        'category' => 'カテゴリー',
+        'photo' => '写真',
+        'name' => '名前',
+        'loginid' => 'ログインＩＤ',
+        'pass' => 'パスワード',
+    ],
 
 ];

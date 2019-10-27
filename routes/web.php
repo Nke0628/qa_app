@@ -13,9 +13,11 @@
 
 
 Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
 
 //トップ画面
 Route::get('/', 'TopController@index');
 
 //質問投稿
 Route::get('/questions/new', 'QuestionsController@new');
+Route::post('/questions/store', 'QuestionsController@store');

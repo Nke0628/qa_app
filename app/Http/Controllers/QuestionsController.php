@@ -8,7 +8,6 @@ use App\Category;
 use Illuminate\Support\Facades\Log;
 use App\Http\Requests\QuestionRequest;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use App\Services\QuestionService;
 use App\Repositories\QuestionRepositoryInterface;
 
@@ -44,6 +43,19 @@ class QuestionsController extends Controller
 
 
     /**
+     * 質問の詳細画面を表示します
+     *
+     * @return Response
+     */
+    public function show($id)
+    {   
+        //質問モデル取得
+        $question = $this->questionService->findQuestion($id);
+        return view('questions.show',compact('question'));
+    }
+
+
+    /**
      * 質問の投稿画面を表示します
      *
      * @return Response
@@ -67,11 +79,15 @@ class QuestionsController extends Controller
     {          
         //登録処理 
         $result = $this->questionService->store($request);
-
-        if(!$result){
-            return redirect('/home')->with('システムエラー。しばらくしてからやり直してください。');            
-        }
         
+        //失敗時の処理
+        if(!$result){
+            return redirect('/home')->with('システムエラー。しばらくしてからやり直してください。');      
+        }
+         
+        //ログ書き込み
+        Log::info('QuestionsController:store 投稿保存しました');
+
         return redirect('/home')->with('flash_message', '投稿が完了しました');
     }
 

@@ -20,4 +20,8 @@ Route::get('/', 'TopController@index');
 
 //質問投稿
 Route::get('/questions/new', 'QuestionsController@new');
+Route::get('/questions/{id}', 'QuestionsController@show');
 Route::post('/questions/store', 'QuestionsController@store');
+
+//コメント投稿
+Route::post('/comments/store', 'CommentsController@store');

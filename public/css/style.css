@@ -1,3 +1,8 @@
+p{
+	margin: 0;
+	padding: 0;
+}
+
 /* ナビゲーションバー */
 .navbar{
 	background: #66ADD9;
@@ -25,4 +30,80 @@
 
 .post-btn i{
 	margin-right: 5px;
+}
+
+
+/**************************************
+*質問詳細画面 
+**************************************/
+.question-pic{
+	width: 50px;
+	height: 50px;
+	border-radius: 25px;
+}
+
+.question-category{
+	border:none;
+	background-color: #ffc0cb;
+	color: white;
+	padding: 5px 10px;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+}
+
+.question-comment-textarea{
+	width: 100%;
+	border:none;
+	background-color: #eee;
+	outline: none;
+}
+
+.question-comment-btn{
+	border:none;
+	padding: 5px 10px;
+	background-color: #87cefa;
+	color: white;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+}
+
+.comment-error{
+	color: red;
+}
+
+.js-comment-edit{
+	cursor: pointer;
+}
+
+.comment-edit{
+	position: relative;
+}
+
+.comment-edit-detail{
+	display: none;
+	background-color: white;
+	position: absolute;
+	padding: 3px 10px;
+	top: 3px;
+	left: 20px;
+	border:1px solid black;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+}
+
+.comment-edit-detail a{
+	text-decoration: none;
+	color: #212529;
+}
+
+.comment-delete{
+    border:none;
+    background-color: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    font-size: 14px;
 }

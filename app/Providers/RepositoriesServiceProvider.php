@@ -17,6 +17,11 @@ class RepositoriesServiceProvider extends ServiceProvider
             \App\Repositories\QuestionRepositoryInterface::class,
             \App\Repositories\Eloquent\QuestionRepository::class
         );
+
+        $this->app->bind(
+            \App\Repositories\CommentRepositoryInterface::class,
+            \App\Repositories\Eloquent\CommentRepository::class
+        );
     }
 
     /**

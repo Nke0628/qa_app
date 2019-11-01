@@ -13,6 +13,17 @@ class QuestionService
         $this->questionRepo = $questionRepo;
     }
 
+    /**
+     * 指定された質問を検索し、返します。
+     *
+     * @param string $id
+     * @return Illuminate\Database\Eloquent\Model
+     */
+    public function findQuestion($id)
+    {
+        return $this->questionRepo->findQuestion($id);   
+    }
+
 
     public function store($request)
     {

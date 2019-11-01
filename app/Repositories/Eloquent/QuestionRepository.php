@@ -12,6 +12,19 @@ use Illuminate\Support\Facades\Log;
 class QuestionRepository implements QuestionRepositoryInterface
 {
     /**
+     * 指定された質問を検索し、返します。
+     *
+     * @param string $id
+     * @return Illuminate\Database\Eloquent\Model
+     */
+    public function findQuestion($id)
+    {
+        $question = Questions::findOrFail($id);
+        return $question;
+    }
+
+
+    /**
      * 投稿された質問を作成します。
      *
 	 * @param $request

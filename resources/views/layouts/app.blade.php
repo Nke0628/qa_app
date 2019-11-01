@@ -31,9 +31,43 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <i class="fas fa-tooth"></i>HA NO NAYAMIu
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+
+                <!--  ハンバガーメニュ-  -->
+                <div class="header">
+                    <nav class="global-nav">
+                        <ul class="global-nav__list">
+                            <li class="global-nav__item"><a href="{{ route('questions.new') }}"><i class="fab fa-quora"></i>質問する</a></li>
+                        @guest
+                            <li class="global-nav__item">
+                                <a href="{{ route('login') }}">ログイン</a>
+                            </li>
+                            <li class="global-nav__item">
+                                <a href="{{ route('register') }}">新規登録</a>
+                            </li>
+                        @else
+                            <li class="global-nav__item">                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form></li>
+                        @endguest
+                        </ul>
+                     </nav>
+                     <div class="hamburger" id="js-hamburger">
+                        <span class="hamburger__line hamburger__line--1"></span>
+                        <span class="hamburger__line hamburger__line--2"></span>
+                        <span class="hamburger__line hamburger__line--3"></span>
+                      </div>
+                </div>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->

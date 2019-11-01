@@ -10,7 +10,7 @@ $(function(){
     $commentEdit.on('click',function(e){
 	    $commentEditDetail = $(this).siblings('.comment-edit-detail');
         $commentEditDetail.toggle();
-
+　　　});
 
     //削除クリック時の確認
     //-------------------------------------------
@@ -24,7 +24,22 @@ $(function(){
     	}
     });
 
-});
 
+/********************************************
+ハンバガーメニューの設定
+*********************************************/
+
+    //クリック時の設定
+    //-------------------------------------------
+    function toggleNav() {
+        let body = document.body;
+        let $hamburger = $('#js-hamburger');
+
+        $hamburger.on('click', function() {
+            body.classList.toggle('nav-open');
+        });
+    }
+
+    toggleNav();
 
 });

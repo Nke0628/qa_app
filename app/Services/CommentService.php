@@ -14,7 +14,7 @@ class CommentService
     }
 
     /**
-     * 指定された質問を検索し、返します。
+     * コメントを保存します
      *
      * @param string $id
      * @return Illuminate\Database\Eloquent\Model
@@ -22,6 +22,18 @@ class CommentService
     public function store($request)
     {
         return $this->commentRepo->storeComment($request);
+    }
+
+
+    /**
+     * コメントを削除します
+     *
+     * @param string $id
+     * @return boolean
+     */
+    public function destroy($request)
+    {
+        return $this->commentRepo->deleteComment($request);
     }
 }    
 

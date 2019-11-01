@@ -36,14 +36,30 @@ class CommentsController extends Controller
      */
     public function edit($id)
     {          
-        Log::info('CommentController:edit 処理開始');
-
         //コメントモデル取得
         $comment = $this->commentService->findComment($id);
 
         Log::info('CommentController:edit 正常終了');
-        
+
         return view('comment.edit',compact('comment'));
+    }
+
+
+    /**
+     * コメントを削除します
+     *
+     * @param string $id コメントid
+     * @return Response
+     */
+    public function destroy($id)
+    {
+        //コメント削除
+        $comment = $this->commentService->destroy($id);
+
+        Log::info('正常終了。コメントを削除しました');
+
+        return view('comment.edit',compact('comment'));
+
     }
 
 

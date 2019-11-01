@@ -25,3 +25,4 @@ Route::post('/questions/store', 'QuestionsController@store');
 
 //コメント投稿
 Route::post('/comments/store', 'CommentsController@store');
+Route::delete('/comments/{id}', 'CommentsController@destroy');

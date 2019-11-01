@@ -30,12 +30,12 @@
               <div class="comment-edit">
                 <i class="fas fa-pencil-alt js-comment-edit"></i>
                 <div class="comment-edit-detail">
-                    <a href="{{ url('/comment/edit/'.$comment->id ) }}">編集</a>
+                    <a href="{{ url('/comments/edit/'.$comment->id ) }}">編集</a>
                     <p>
-                      <form method="post" action="/comment/$comment->id">
+                      <form method="post" action="/comments/{{$comment->id}}" class="js-comment-delete-form">
                         @method('delete')
                         @csrf
-                      <input type="submit" value="削除" class="comment-delete">
+                      <input type="submit" value="削除" class="comment-delete js-comment-delete">
                       </form>
                     </p>
                 </div>

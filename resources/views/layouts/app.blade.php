@@ -44,7 +44,7 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link post-btn" href="{{ url('/questions/new') }}"><i class="fab fa-quora"></i>質問する</a>
+                            <a class="nav-link post-btn" href="{{ route('questions.new') }}"><i class="fab fa-quora"></i>質問する</a>
                         </li>
                         <!-- Authentication Links -->
                         @guest

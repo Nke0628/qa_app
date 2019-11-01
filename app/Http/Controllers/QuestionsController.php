@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Questions;
 use App\Category;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Route;
 use App\Http\Requests\QuestionRequest;
 use Illuminate\Support\Facades\Auth;
 use App\Services\QuestionService;

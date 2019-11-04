@@ -3,6 +3,11 @@ p{
 	padding: 0;
 }
 
+
+/**************************************
+*COMMON設定
+**************************************/
+
 /* ナビゲーションバー */
 .navbar{
 	background: #66ADD9;
@@ -113,20 +118,43 @@ p{
 }
 
 
+/**************************************
+*エラー画面
+**************************************/
+.disp-error{
+  height: 300px;
+}
+
+.disp-error a{
+  border:none;
+  padding: 5px 10px;
+  background-color: #87cefa;
+  color: white;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  font-size: 18px;
+}
+
+/**************************************
+*レスポンシブ対応
+**************************************/
+
+/* ハンバーガーメニュー */
 @media screen and (max-width: 766px){
 
 .global-nav {
   display: block;
   position: fixed;
-  right: 0; /* これで隠れる */
+  right: 0;
   top: 60px;
-  width: 100%; /* スマホに収まるくらい */
+  width: 100%; /* スマホに収まる大きさ */
   height: 100vh;
   padding-top: 40px;
   background-color: #fff;
   transition: all .6s;
   z-index: 200;
-  overflow-y: auto; /* メニューが多くなったらスクロールできるように */
+  overflow-y: auto; /* メニューが多くなったらスクロールできるようにする */
   opacity: 0;
 }
 .hamburger {

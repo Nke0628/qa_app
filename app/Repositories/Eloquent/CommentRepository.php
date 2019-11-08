@@ -12,6 +12,52 @@ use Illuminate\Support\Facades\Log;
 class CommentRepository implements CommentRepositoryInterface
 {
     /**
+     * コメントを検索します
+     *
+     * @param $request
+     * @return Illuminate\Database\Eloquent\Model
+     */
+    public function findComment($id)
+    {
+        $comment = Comment::findOrFail($id);
+        return $comment;
+    }
+
+
+    /**
+     * 投稿されたコメントを編集します。
+     *
+     * @param $request
+     * @param $id
+     * @return Illuminate\Database\Eloquent\Model
+     */
+    public function updateComment($request, $id)
+    {
+        $comment = Comment::findOrFail($id);
+        $comment->comment = $request->comment;
+        $comment->save();
+
+        return $comment;
+    }
+
+
+    /**
+     * 投稿されたコメントを論理削除します。
+     *
+     * @param $request
+     * @return Illuminate\Database\Eloquent\Model
+     */
+    public function deleteComment($id)
+    {
+        $comment = Comment::findOrFail($id);
+        $comment->delete_flag = '1';
+        $comment->save();
+
+        return $comment;
+    }
+
+
+    /**
      * 投稿されたコメントを保存します。
      *
 	 * @param $request

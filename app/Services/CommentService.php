@@ -14,9 +14,32 @@ class CommentService
     }
 
     /**
-     * コメントを保存します
+     * コメントを検索します
      *
      * @param string $id
+     * @return Illuminate\Database\Eloquent\Model
+     */
+    public function find($id)
+    {
+        return $this->commentRepo->findComment($id);
+    }
+
+    /**
+     * コメントを編集します
+     *
+     * @param string $id
+     * @return Illuminate\Database\Eloquent\Model
+     */
+    public function update($request, $id)
+    {
+        return $this->commentRepo->updateComment($request, $id);
+    }
+
+
+    /**
+     * コメントを保存します
+     *
+     * @param Request $request
      * @return Illuminate\Database\Eloquent\Model
      */
     public function store($request)
@@ -29,11 +52,11 @@ class CommentService
      * コメントを削除します
      *
      * @param string $id
-     * @return boolean
+     * @return Illuminate\Database\Eloquent\Model
      */
-    public function destroy($request)
+    public function destroy($id)
     {
-        return $this->commentRepo->deleteComment($request);
+        return $this->commentRepo->deleteComment($id);
     }
 }    
 

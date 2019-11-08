@@ -37,11 +37,26 @@ class CommentsController extends Controller
     public function edit($id)
     {          
         //コメントモデル取得
-        $comment = $this->commentService->findComment($id);
+        $comment = $this->commentService->find($id);
+        return view('comments.edit',compact('comment'));
+    }
 
-        Log::info('CommentController:edit 正常終了');
 
-        return view('comment.edit',compact('comment'));
+    /**
+     * コメントを編集します。
+     *
+     * @param CommentRequest $request リクエストフォーム
+     * @param string $id コメントid
+     * @return Response
+     */
+    public function update(CommentRequest $request, $id)
+    {          
+        //コメントモデル取得
+        $comment = $this->commentService->update($request,$id);
+
+        Log::info('正常終了。コメントを編集しました');
+
+        return redirect('/questions/'.$comment->question_id)->with('flash_message', 'コメント編集しました');
     }
 
 
@@ -58,8 +73,7 @@ class CommentsController extends Controller
 
         Log::info('正常終了。コメントを削除しました');
 
-        return view('comment.edit',compact('comment'));
-
+        return redirect('/questions/'.$comment->question_id)->with('flash_message', 'コメント削除しました');
     }
 
 
@@ -73,11 +87,6 @@ class CommentsController extends Controller
     {          
         //登録処理 
         $result = $this->commentService->store($request);
-        
-        //失敗時の処理
-        if(!$result){
-            return redirect('/home')->with('システムエラー。しばらくしてからやり直してください。');      
-        }
          
         //ログ書き込み
         Log::info('CommentController:store コメント保存しました');

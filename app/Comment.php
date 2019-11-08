@@ -22,4 +22,14 @@ class Comment extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+
+    /**
+     * コメントの質問情報を取得
+     *
+     */
+    public function question()
+    {
+        return $this->belongsTo('App\Questions','question_id');
+    }
 }

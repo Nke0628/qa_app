@@ -17,9 +17,9 @@
           最終更新日:{{date('Y-m-d',strtotime($question->updated_at))}}
         </p>
         <!--コメント数-->
-        <h3>回答数{{ $question->comments->count() }}件</h3>       
+        <h3>回答数{{ $question->comments->where('delete_flag','0')->count() }}件</h3>       
         <!--コメント-->
-        @foreach($question->comments as $comment)
+        @foreach($question->comments->where('delete_flag','0') as $comment)
         <div class="container">
           <div class="border-top row mt-3 pt-4">
             <div class="col-md-3">
@@ -44,7 +44,7 @@
             </div>
             <div class="col-md-9">
               {!! nl2br(e($comment->comment)) !!}
-              <p class="text-right pt-5">最終更新日:{{date('Y-m-d',strtotime($question->updated_at))}}</p>
+              <p class="text-right pt-5">最終更新日:{{date('Y-m-d',strtotime($comment->updated_at))}}</p>
             </div>
           </div>
         </div>

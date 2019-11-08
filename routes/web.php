@@ -24,5 +24,7 @@ Route::get('/questions/{id}', 'QuestionsController@show');
 Route::post('/questions/store', 'QuestionsController@store');
 
 //コメント投稿
+Route::get('/comments/edit/{id}', 'CommentsController@edit');
+Route::patch('/comments/{id}', 'CommentsController@update');
 Route::post('/comments/store', 'CommentsController@store');
 Route::delete('/comments/{id}', 'CommentsController@destroy');

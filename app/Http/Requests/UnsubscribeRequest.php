@@ -1,0 +1,43 @@
+<?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
+use App\User;
+use Illuminate\Support\Facades\Hash;
+
+
+class UnsubscribeRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return true;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function rules()
+    {
+        $user = User::find(Auth::id());
+
+        return [
+            'password' => [
+                'required',
+                //独自バリデーション(パスワードを比較する)
+                function ($attribute, $value, $fail) use ($user){
+                if (!Hash::check($value,$user->password)) {
+                  return $fail('パスワードが異なります');
+                }
+            }]
+        ];
+    }
+}

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -35,5 +36,16 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    /**
+     * ログイン時にdelete_flag=0のみを認証対象とする為、AuthenticatesUsersトレイトをオーバーライドする
+     *
+     * @param lluminate\Http\Request $request
+     * @return array
+     */
+    public function credentials(Request $request)
+    {
+        return array_merge($request->only($this->username(), 'password'),['delete_flag' => '0']);
     }
 }

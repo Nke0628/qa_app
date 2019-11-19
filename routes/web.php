@@ -15,6 +15,12 @@
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
+//退会機能
+Route::group(['middleware' => 'auth'],function(){
+	Route::get('/unsubscribe', 'Auth\UnsubscribeController@showUnsubsribeForm');
+    Route::post('/unsubscribe', 'Auth\UnsubscribeController@execUnsubscribe');
+});
+
 //トップ画面
 Route::get('/', 'TopController@index')->name('top');
 

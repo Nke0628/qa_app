@@ -163,6 +163,7 @@ return [
         'loginid' => 'ログインＩＤ',
         'pass' => 'パスワード',
         'comment' => 'コメント',
+        'password' => 'パスワード',
     ],
 
 ];

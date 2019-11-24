@@ -3,6 +3,9 @@ p{
 	padding: 0;
 }
 
+a{
+  text-decoration: none;
+}
 
 /**************************************
 *COMMON設定
@@ -10,8 +13,8 @@ p{
 
 /* ナビゲーションバー */
 .navbar{
-	background: #66ADD9;
-	height: 60px;
+  background-image: url('../storage/background/Reef.jpg');
+  height: 60px;
 }
 
 .navbar-nav>li>a{
@@ -27,10 +30,11 @@ p{
 }
 
 .post-btn{
-	border: 1px solid #eee;
-	border-radius: 6px;
-	-moz-border-radius: 6px;
-	-webkit-border-radius: 6px;	
+  margin-top: 3px;
+  padding: 5px 20px;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;	
 	margin-right: 10px;
 }
 
@@ -53,6 +57,61 @@ p{
 .btn-blue{
   background-color: #87cefa;
   color: white;
+}
+
+
+/**************************************
+*メイン画面
+**************************************/
+.main{
+  background-image: url('../storage/background/bg2.jpg');
+  height: 600px;
+  position: relative;
+}
+
+.main::before{
+  /* 透過した黒を上から重ねるイメージ */
+  background-color: rgba(0,0,0,0.5);
+  /* 自由に位置指定 */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: ' ';
+}
+
+.main-text{
+  padding-top: 150px;
+}
+
+.main-title{
+  font-size: 50px;
+}
+
+.main-login-link{
+  padding:10px 60px;
+  background-color: #117ec6;
+  color: white;
+  border-radius: 5px;
+}
+
+.main-sns-link{
+  display: block;
+  width:200px;
+  height: 30px;
+  background-color: #f8fafc;
+  color: #666;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  line-height: 30px;
+}
+
+.main-sns-link-logo{
+  width: 20px;
+  height: 20px;
+  margin-right: 3px;
 }
 
 /**************************************

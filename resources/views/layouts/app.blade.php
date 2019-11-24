@@ -29,7 +29,7 @@
         <nav class="navbar navbar-expand-md navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <i class="fas fa-tooth"></i>HA NO NAYAMIu
+                    <i class="fas fa-tooth"></i>HA NO NAYAMI
                 </a>
 
                 <!--  ハンバガーメニュ-  -->
@@ -117,7 +117,7 @@
             </div>
         @endif
 
-        <main class="py-4">
+        <main class="">
             @yield('content')
         </main>
     </div>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container mt-4">
         <div class="offset-md-2 col-md-8 bg-white pt-3 pb-5">
             @if ($errors->any())
                 <div class="alert alert-danger">

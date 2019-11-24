@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="container">
+  <div class="container mt-4">
     <div class="row">
       <div class="col-md-12 bg-white cancel">
       	<div class="offset-md-4 col-md-4 px-md-5">

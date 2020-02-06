@@ -16,8 +16,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 //退会機能
-Route::group(['middleware' => 'auth'],function(){
-	Route::get('/unsubscribe', 'Auth\UnsubscribeController@showUnsubsribeForm');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/unsubscribe', 'Auth\UnsubscribeController@showUnsubsribeForm');
     Route::post('/unsubscribe', 'Auth\UnsubscribeController@execUnsubscribe');
 });
 
@@ -25,6 +25,8 @@ Route::group(['middleware' => 'auth'],function(){
 Route::get('/', 'TopController@index')->name('top');
 
 //質問投稿
+Route::get('/questions/getShain', 'QuestionsController@getShain');
+Route::get('/questions/dialog', 'QuestionsController@dialogForm');
 Route::get('/questions/new', 'QuestionsController@new')->name('questions.new');
 Route::get('/questions/{id}', 'QuestionsController@show');
 Route::post('/questions/store', 'QuestionsController@store');

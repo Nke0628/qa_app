@@ -1,9 +1,9 @@
-p{
-	margin: 0;
-	padding: 0;
+p {
+  margin: 0;
+  padding: 0;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
@@ -12,66 +12,65 @@ a{
 **************************************/
 
 /* ナビゲーションバー */
-.navbar{
+.navbar {
   background-image: url('../storage/background/Reef.jpg');
   height: 60px;
 }
 
-.navbar-nav>li>a{
-	color: white;
+.navbar-nav > li > a {
+  color: white;
 }
 
-.navbar-brand{
-	color: white;
+.navbar-brand {
+  color: white;
 }
 
-.navbar-brand i{
-	margin-right: 5px;
+.navbar-brand i {
+  margin-right: 5px;
 }
 
-.post-btn{
+.post-btn {
   margin-top: 3px;
   padding: 5px 20px;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;	
-	margin-right: 10px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  margin-right: 10px;
 }
 
-.post-btn i{
-	margin-right: 5px;
+.post-btn i {
+  margin-right: 5px;
 }
 
-.global-nav{
-    display: none;
+.global-nav {
+  display: none;
 }
 
-.btn{
-  border:none;
+.btn {
+  border: none;
   padding: 5px 10px;
   border-radius: 3px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
 }
 
-.btn-blue{
+.btn-blue {
   background-color: #87cefa;
   color: white;
 }
 
-
 /**************************************
 *メイン画面
 **************************************/
-.main{
+.main {
   background-image: url('../storage/background/bg2.jpg');
   height: 600px;
   position: relative;
 }
 
-.main::before{
+.main::before {
   /* 透過した黒を上から重ねるイメージ */
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   /* 自由に位置指定 */
   position: absolute;
   top: 0;
@@ -81,24 +80,24 @@ a{
   content: ' ';
 }
 
-.main-text{
+.main-text {
   padding-top: 150px;
 }
 
-.main-title{
+.main-title {
   font-size: 50px;
 }
 
-.main-login-link{
-  padding:10px 60px;
+.main-login-link {
+  padding: 10px 60px;
   background-color: #117ec6;
   color: white;
   border-radius: 5px;
 }
 
-.main-sns-link{
+.main-sns-link {
   display: block;
-  width:200px;
+  width: 200px;
   height: 30px;
   background-color: #f8fafc;
   color: #666;
@@ -108,7 +107,7 @@ a{
   line-height: 30px;
 }
 
-.main-sns-link-logo{
+.main-sns-link-logo {
   width: 20px;
   height: 20px;
   margin-right: 3px;
@@ -117,103 +116,101 @@ a{
 /**************************************
 *質問詳細画面 
 **************************************/
-.question-pic{
-	width: 50px;
-	height: 50px;
-	border-radius: 25px;
+.question-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
 }
 
-.question-category{
-	border:none;
-	background-color: #ffc0cb;
-	color: white;
-	padding: 5px 10px;
-	border-radius: 3px;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
+.question-category {
+  border: none;
+  background-color: #ffc0cb;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
 }
 
-.question-comment-textarea{
-	width: 100%;
-	border:none;
-	background-color: #eee;
-	outline: none;
+.question-comment-textarea {
+  width: 100%;
+  border: none;
+  background-color: #eee;
+  outline: none;
 }
 
-.question-comment-btn{
-	border:none;
-	padding: 5px 10px;
-	background-color: #87cefa;
-	color: white;
-	border-radius: 3px;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
+.question-comment-btn {
+  border: none;
+  padding: 5px 10px;
+  background-color: #87cefa;
+  color: white;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
 }
 
-.comment-error{
-	color: red;
+.comment-error {
+  color: red;
 }
 
-.js-comment-edit{
-	cursor: pointer;
+.js-comment-edit {
+  cursor: pointer;
 }
 
-.comment-edit{
-	position: relative;
+.comment-edit {
+  position: relative;
 }
 
-.comment-edit-detail{
-	display: none;
-	background-color: white;
-	position: absolute;
-	padding: 3px 10px;
-	top: 3px;
-	left: 20px;
-	border:1px solid black;
-	border-radius: 3px;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
+.comment-edit-detail {
+  display: none;
+  background-color: white;
+  position: absolute;
+  padding: 3px 10px;
+  top: 3px;
+  left: 20px;
+  border: 1px solid black;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
 }
 
-.comment-edit-detail a{
-	text-decoration: none;
-	color: #212529;
+.comment-edit-detail a {
+  text-decoration: none;
+  color: #212529;
 }
 
-.comment-delete{
-    border:none;
-    background-color: none;
-    padding: 0;
-    margin: 0;
-    cursor: pointer;
-    font-size: 14px;
+.comment-delete {
+  border: none;
+  background-color: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font-size: 14px;
 }
-
 
 /**************************************
 *退会画面
 **************************************/
-.cancel{
+.cancel {
   height: 400px;
 }
 
-.subscribe-form-text{
-  border:none;
+.subscribe-form-text {
+  border: none;
   width: 100%;
   height: 40px;
   background-color: #eee;
 }
 
-
 /**************************************
 *エラー画面
 **************************************/
-.disp-error{
+.disp-error {
   height: 300px;
 }
 
-.disp-error a{
-  border:none;
+.disp-error a {
+  border: none;
   padding: 5px 10px;
   background-color: #87cefa;
   color: white;
@@ -223,11 +220,10 @@ a{
   font-size: 18px;
 }
 
-
 /**************************************
 *フラッシュメッセージ
 **************************************/
-.flash_message{
+.flash_message {
   text-align: center;
   background-color: #ff69b4;
   color: white;
@@ -235,103 +231,141 @@ a{
 }
 
 /**************************************
+*ダイアログ設定
+**************************************/
+.dialog {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background-color: white;
+  z-index: 9999;
+  display: none;
+  border: solid 1px grey;
+  border-radius: 3px;
+}
+
+.dialog--isshow {
+  display: block;
+}
+
+.dialog__body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.dialog__content {
+  flex: 1 0 auto;
+}
+
+.dialog__item {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 250px;
+}
+
+.dialog__footer {
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+/**************************************
 *レスポンシブ対応
 **************************************/
 
 /* ハンバーガーメニュー */
-@media screen and (max-width: 766px){
-
-.global-nav {
-  display: block;
-  position: fixed;
-  right: 0;
-  top: 60px;
-  width: 100%; /* スマホに収まる大きさ */
-  height: 100vh;
-  padding-top: 40px;
-  background-color: #fff;
-  transition: all .6s;
-  z-index: 200;
-  overflow-y: auto; /* メニューが多くなったらスクロールできるようにする */
-  opacity: 0;
-}
-.hamburger {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 40px; /* クリックしやすいようにちゃんと幅を指定する */
-  height: 40px; /* クリックしやすいようにちゃんと高さを指定する */
-  cursor: pointer;
-  z-index: 300;
-}
-.global-nav__list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.global-nav__item {
-  text-align: center;
-  padding: 0 14px;
-}
-.global-nav__item a {
-  display: block;
-  padding: 8px 0;
-  border-bottom: 1px solid #eee;
-  text-decoration: none;
-  color: #111;
-}
-.global-nav__item a:hover {
-  background-color: #eee;
-}
-.hamburger__line {
-  position: absolute;
-  left: 11px;
-  width: 18px;
-  height: 1px;
-  background-color: #111;
-  transition: all .6s;
-}
-.hamburger__line--1 {
-  top: 22px;
-}
-.hamburger__line--2 {
-  top: 28px;
-}
-.hamburger__line--3 {
-  top: 34px;
-}
-.black-bg {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 100;
-  background-color: #000;
-  opacity: 0;
-  visibility: hidden;
-  transition: all .6s;
-  cursor: pointer;
-}
-/* 表示された時用のCSS */
-.nav-open .global-nav {
-  opacity: 1.0;
-}
-.nav-open .black-bg {
-  opacity: .8;
-  visibility: visible;
-}
-.nav-open .hamburger__line--1 {
-  transform: rotate(45deg);
-  top: 28px;
-}
-.nav-open .hamburger__line--2 {
-  width: 0;
-  left: 50%;
-}
-.nav-open .hamburger__line--3 {
-  transform: rotate(-45deg);
-  top: 28px;
-
-}
+@media screen and (max-width: 766px) {
+  .global-nav {
+    display: block;
+    position: fixed;
+    right: 0;
+    top: 60px;
+    width: 100%; /* スマホに収まる大きさ */
+    height: 100vh;
+    padding-top: 40px;
+    background-color: #fff;
+    transition: all 0.6s;
+    z-index: 200;
+    overflow-y: auto; /* メニューが多くなったらスクロールできるようにする */
+    opacity: 0;
+  }
+  .hamburger {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px; /* クリックしやすいようにちゃんと幅を指定する */
+    height: 40px; /* クリックしやすいようにちゃんと高さを指定する */
+    cursor: pointer;
+    z-index: 300;
+  }
+  .global-nav__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .global-nav__item {
+    text-align: center;
+    padding: 0 14px;
+  }
+  .global-nav__item a {
+    display: block;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    text-decoration: none;
+    color: #111;
+  }
+  .global-nav__item a:hover {
+    background-color: #eee;
+  }
+  .hamburger__line {
+    position: absolute;
+    left: 11px;
+    width: 18px;
+    height: 1px;
+    background-color: #111;
+    transition: all 0.6s;
+  }
+  .hamburger__line--1 {
+    top: 22px;
+  }
+  .hamburger__line--2 {
+    top: 28px;
+  }
+  .hamburger__line--3 {
+    top: 34px;
+  }
+  .black-bg {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    background-color: #000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.6s;
+    cursor: pointer;
+  }
+  /* 表示された時用のCSS */
+  .nav-open .global-nav {
+    opacity: 1;
+  }
+  .nav-open .black-bg {
+    opacity: 0.8;
+    visibility: visible;
+  }
+  .nav-open .hamburger__line--1 {
+    transform: rotate(45deg);
+    top: 28px;
+  }
+  .nav-open .hamburger__line--2 {
+    width: 0;
+    left: 50%;
+  }
+  .nav-open .hamburger__line--3 {
+    transform: rotate(-45deg);
+    top: 28px;
+  }
 }

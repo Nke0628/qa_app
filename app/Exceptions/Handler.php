@@ -62,49 +62,52 @@ class Handler extends ExceptionHandler
     {
         $status_code = $e->getStatusCode();
 
-        switch ($status_code) {
-            case 400:
-                $message = 'Bad Request';
-                break;
-            case 401:
-                $message = '認証に失敗しました';
-                break;
-            case 403:
-                $message = 'アクセス権がありません';
-                break;
-            case 404:
-                $message = 'ページが見つかりませんでした。お探しのコンテンツは既に削除された場合があります。';
-                break;
-            case 408:
-                $message = 'タイムアウトです';
-                break;
-            case 414:
-                $message = 'リクエストURIが長すぎます';
-                break;
-            case 419:
-                $message = '不正なリクエストです';
-                break;
-            case 500:
-                $message = 'Internal Server Error';
-                break;
-            case 503:
-                $message = 'Service Unavailable';
-                break;
-            default:
-                $message = 'エラー';
-                break;
+        if (env('APP_DEBUG')) {
+            switch ($status_code) {
+                case 400:
+                    $message = 'Bad Request';
+                    break;
+                case 401:
+                    $message = '認証に失敗しました';
+                    break;
+                case 403:
+                    $message = 'アクセス権がありません';
+                    break;
+                case 404:
+                    $message = 'ページが見つかりませんでした。お探しのコンテンツは既に削除された場合があります。';
+                    break;
+                case 408:
+                    $message = 'タイムアウトです';
+                    break;
+                case 414:
+                    $message = 'リクエストURIが長すぎます';
+                    break;
+                case 419:
+                    $message = '不正なリクエストです';
+                    break;
+                case 500:
+                    $message = 'Internal Server Error';
+                    break;
+                case 503:
+                    $message = 'Service Unavailable';
+                    break;
+                default:
+                    $message = 'エラー';
+                    break;
+            }
+
+            //共通テンプレートを使用
+            return response()->view("errors.common",
+                [
+                    // VIEWに与える変数
+                    'exception'   => $e,
+                    'message'     => $message,
+                    'status_code' => $status_code,
+                ],
+                $status_code, // レスポンス自体のステータスコード
+                $e->getHeaders()
+            );
         }
 
-        //共通テンプレートを使用
-        return response()->view("errors.common",
-            [
-                // VIEWに与える変数
-                'exception'   => $e,
-                'message'     => $message,
-                'status_code' => $status_code,
-            ],
-            $status_code, // レスポンス自体のステータスコード
-            $e->getHeaders()
-        );
     }
 }

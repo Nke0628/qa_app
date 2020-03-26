@@ -34,7 +34,7 @@ a{
   padding: 5px 20px;
 	border-radius: 3px;
 	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;	
+	-webkit-border-radius: 3px;
 	margin-right: 10px;
 }
 
@@ -47,11 +47,12 @@ a{
 }
 
 .btn{
-  border:none;
-  padding: 5px 10px;
-  border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
+    border:none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    cursor: pointer;
 }
 
 .btn-blue{
@@ -59,6 +60,17 @@ a{
   color: white;
 }
 
+.btn-black{
+    border: solid 1px #212529;
+}
+
+.bd-error{
+    border: 1px solid palevioletred;
+}
+
+.text-error{
+    color: palevioletred;
+}
 
 /**************************************
 *メイン画面
@@ -115,7 +127,7 @@ a{
 }
 
 /**************************************
-*質問詳細画面 
+*質問詳細画面
 **************************************/
 .question-pic{
 	width: 50px;
@@ -189,7 +201,6 @@ a{
     font-size: 14px;
 }
 
-
 /**************************************
 *退会画面
 **************************************/
@@ -225,13 +236,94 @@ a{
 
 
 /**************************************
+*カテゴリマスター
+**************************************/
+.contents{
+    width: 80%;
+    margin: 20px auto;
+    padding: 10px 15px 50px;
+    background-color: white;
+}
+
+.category-header{
+    margin-bottom: 15px;
+}
+
+.category-menu__item{
+    display: inline-block;
+    margin-bottom: 1.5em;
+}
+
+.category-table{
+    border-collapse: collapse;
+}
+
+.category-table th,td{
+    padding: 5px 15px;
+    border: 1px solid #dcdcdc;
+}
+
+.category-table th{
+    height: 50px;
+    background: #00a1e9;
+    color: white;
+}
+
+.category-table th:nth-child(n+2) {
+    cursor: pointer;
+    position: relative;
+    width: 100px;
+}
+
+.category-table td:nth-child(n+3),
+.category-table th:nth-child(n+3){
+    min-width: 250px;
+}
+
+.category-table td:last-child,
+.category-table th:last-child{
+    min-width: unset;
+}
+
+.category-table td{
+    background: #eee;
+}
+
+.category-table tr:nth-child(odd) td{
+    background: #fff;
+}
+
+.category-table th::before, .category-table th::after {
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+    border: 5px solid transparent;
+    right: 10px;
+    top: 50%;
+}
+
+.category-table th::before {
+    border-bottom-color: white;
+    margin-top: -10px;
+}
+.category-table th::after {
+    border-top-color: white;
+    margin-top: 2px;
+}
+
+/**************************************
 *フラッシュメッセージ
 **************************************/
-.flash_message{
-  text-align: center;
-  background-color: #ff69b4;
-  color: white;
-  height: 50px;
+.flash-message{
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+    background-color: #f4b3c2;
+    border-radius: 5px;
+    color: white;
+    height: 50px;
+    line-height: 50px;
 }
 
 /**************************************
@@ -241,97 +333,123 @@ a{
 /* ハンバーガーメニュー */
 @media screen and (max-width: 766px){
 
-.global-nav {
-  display: block;
-  position: fixed;
-  right: 0;
-  top: 60px;
-  width: 100%; /* スマホに収まる大きさ */
-  height: 100vh;
-  padding-top: 40px;
-  background-color: #fff;
-  transition: all .6s;
-  z-index: 200;
-  overflow-y: auto; /* メニューが多くなったらスクロールできるようにする */
-  opacity: 0;
-}
-.hamburger {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 40px; /* クリックしやすいようにちゃんと幅を指定する */
-  height: 40px; /* クリックしやすいようにちゃんと高さを指定する */
-  cursor: pointer;
-  z-index: 300;
-}
-.global-nav__list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.global-nav__item {
-  text-align: center;
-  padding: 0 14px;
-}
-.global-nav__item a {
-  display: block;
-  padding: 8px 0;
-  border-bottom: 1px solid #eee;
-  text-decoration: none;
-  color: #111;
-}
-.global-nav__item a:hover {
-  background-color: #eee;
-}
-.hamburger__line {
-  position: absolute;
-  left: 11px;
-  width: 18px;
-  height: 1px;
-  background-color: #111;
-  transition: all .6s;
-}
-.hamburger__line--1 {
-  top: 22px;
-}
-.hamburger__line--2 {
-  top: 28px;
-}
-.hamburger__line--3 {
-  top: 34px;
-}
-.black-bg {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 100;
-  background-color: #000;
-  opacity: 0;
-  visibility: hidden;
-  transition: all .6s;
-  cursor: pointer;
-}
-/* 表示された時用のCSS */
-.nav-open .global-nav {
-  opacity: 1.0;
-}
-.nav-open .black-bg {
-  opacity: .8;
-  visibility: visible;
-}
-.nav-open .hamburger__line--1 {
-  transform: rotate(45deg);
-  top: 28px;
-}
-.nav-open .hamburger__line--2 {
-  width: 0;
-  left: 50%;
-}
-.nav-open .hamburger__line--3 {
-  transform: rotate(-45deg);
-  top: 28px;
+    .global-nav {
+      display: block;
+      position: fixed;
+      right: 0;
+      top: 60px;
+      width: 100%; /* スマホに収まる大きさ */
+      height: 100vh;
+      padding-top: 40px;
+      background-color: #fff;
+      transition: all .6s;
+      z-index: 200;
+      overflow-y: auto; /* メニューが多くなったらスクロールできるようにする */
+      opacity: 0;
+    }
+    .hamburger {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 40px; /* クリックしやすいようにちゃんと幅を指定する */
+      height: 40px; /* クリックしやすいようにちゃんと高さを指定する */
+      cursor: pointer;
+      z-index: 300;
+    }
+    .global-nav__list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .global-nav__item {
+      text-align: center;
+      padding: 0 14px;
+    }
+    .global-nav__item a {
+      display: block;
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+      text-decoration: none;
+      color: #111;
+    }
+    .global-nav__item a:hover {
+      background-color: #eee;
+    }
+    .hamburger__line {
+      position: absolute;
+      left: 11px;
+      width: 18px;
+      height: 1px;
+      background-color: #111;
+      transition: all .6s;
+    }
+    .hamburger__line--1 {
+      top: 22px;
+    }
+    .hamburger__line--2 {
+      top: 28px;
+    }
+    .hamburger__line--3 {
+      top: 34px;
+    }
+    .black-bg {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 100;
+      background-color: #000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all .6s;
+      cursor: pointer;
+    }
+    /* 表示された時用のCSS */
+    .nav-open .global-nav {
+      opacity: 1.0;
+    }
+    .nav-open .black-bg {
+      opacity: .8;
+      visibility: visible;
+    }
+    .nav-open .hamburger__line--1 {
+      transform: rotate(45deg);
+      top: 28px;
+    }
+    .nav-open .hamburger__line--2 {
+      width: 0;
+      left: 50%;
+    }
+    .nav-open .hamburger__line--3 {
+      transform: rotate(-45deg);
+      top: 28px;
 
-}
+    }
+
+    /* カテゴリマスター*/
+    .contents{
+        width: 100%;
+    }
+
+    .category-table{
+        width: 100%;
+    }
+
+    .category-table__label{
+        display: none;
+    }
+
+    .category-table__row tr,
+    .category-table__row td{
+        display: block;
+        width: 100%;
+    }
+
+    .category-table td:before{
+        content: attr(data-label);
+        font-weight: bold;
+    }
+
+
 }

@@ -62,7 +62,53 @@ $(function(){
     $unsubscribe.on('click',function(e){
         e.preventDefault();
         if(confirm('本当に退会しますか？')){
-            $('.js-unsubscribe-form').submit();        
+            $('.js-unsubscribe-form').submit();
         }
     })
+
+
+/********************************************
+ソート機能
+*********************************************/
+
+    //カテゴリマスタ
+    //-------------------------------------------
+    var $tableSortObj = $('.js_category_master_item');
+    $tableSortObj.on('click', function (){
+        /* フォーム */
+        var form = document.createElement('form');
+        form.action = '/master/category';
+        form.method = 'get';
+
+        /* ソート対象 */
+        var sortTarget = $(this).data('column');
+        var sortTargetInput = document.createElement('input');
+        sortTargetInput.value = sortTarget;
+        sortTargetInput.name = 'column';
+
+        /* ソート順 */
+        var sortOrder ='';
+        var match = location.search.match(/sort_order=(.*?)(&|$)/);
+        if(match) {
+            sortOrder = decodeURIComponent(match[1]);
+        }
+        if ( sortOrder == 'asc' ){
+            sortOrder = 'desc';
+        }else if ( sortOrder == 'desc' ) {
+            sortOrder = 'asc';
+        }else{
+            sortOrder = 'asc';
+        }
+        var sortOrderInput = document.createElement('input');
+        sortOrderInput.value = sortOrder;
+        sortOrderInput.name = 'sort_order';
+
+        /* 送信 */
+        form.appendChild(sortTargetInput);
+        form.appendChild(sortOrderInput);
+        document.body.appendChild(form);
+        form.submit();
+    });
 });
+
+

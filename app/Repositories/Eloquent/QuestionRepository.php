@@ -37,8 +37,8 @@ class QuestionRepository implements QuestionRepositoryInterface
         try{
             $question = new Questions;
 
-            //画像処理          
-            if(!empty($request0->file['photo'])){
+            //画像処理
+            if(!empty($request->file['photo'])){
                 $file_name = $request->file('photo')->store('public/question_images');
                 $question->image_path = $file_name;
             }

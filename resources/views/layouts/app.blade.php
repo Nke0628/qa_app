@@ -47,7 +47,7 @@
                         @else
                             <li class="global-nav__item">
                                 <a href="#">マイページ</a>
-                            </li>                           
+                            </li>
                             <li class="global-nav__item">
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
@@ -112,7 +112,7 @@
         </nav>
 
         @if (session('flash_message'))
-            <div class="flash_message">
+            <div class="flash-message">
                 {{ session('flash_message') }}
             </div>
         @endif

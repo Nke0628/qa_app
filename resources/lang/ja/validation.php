@@ -164,6 +164,7 @@ return [
         'pass' => 'パスワード',
         'comment' => 'コメント',
         'password' => 'パスワード',
+        'category-name' => 'カテゴリ名称'
     ],
 
 ];

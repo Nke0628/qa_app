@@ -34,3 +34,12 @@ Route::get('/comments/edit/{id}', 'CommentsController@edit');
 Route::patch('/comments/{id}', 'CommentsController@update');
 Route::post('/comments/store', 'CommentsController@store');
 Route::delete('/comments/{id}', 'CommentsController@destroy');
+
+// マスタ管理画面
+Route::get('/master/category','CategoryController@index');
+Route::get('/master/category/create','CategoryController@create');
+Route::post('/master/category','CategoryController@store');
+Route::delete('/master/delete', 'CategoryController@delete');
+Route::get('/master/edit/{id}', 'CategoryController@edit');
+Route::get('/master/pdf', 'CategoryController@show');
+Route::get('/master/excel', 'CategoryController@excel');
